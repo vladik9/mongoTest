@@ -12,15 +12,14 @@ const userSchema = new mongoose.Schema({ name: String, id: Number });
 
 const modelUser = mongoose.model("User", userSchema);
 // initializaiton of a new user using model created before
-//const User1 = new modelUser({ name: "Jo", id: 1 });
+const User1 = new modelUser({ name: "Jo", id: 1 });
 
 // save method only one record
-// User1.save((err) => {
-//   if (err) console.log(err);
-//   else {
-//     console.log("Succes User1");
-//   }
-// });
+User1.save((err) => {
+   if (err) console.log(err);
+   else {
+    console.log("Succes User1");   }
+ });
 // insertin an arr of  records in the database
 // const User1 = new modelUser({ name: "Jo0", id: 1 });
 // const User2 = new modelUser({ name: "Jo00", id: 2 });
