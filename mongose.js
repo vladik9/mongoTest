@@ -20,6 +20,19 @@ User1.save((err) => {
    else {
     console.log("Succes User1");   }
  });
+
+//############Combined type of model and schema#####
+const NewModel = mongoose.model("NewModel", { id: Number, name: String });
+
+const user = new NewModel({ id: 3224, name: "Vlad" });
+
+user
+  .save()
+  .then(() => {
+    console.log(user);
+  })
+  .catch((err) => console.log(err));
+//#####################END########
 // insertin an arr of  records in the database
 // const User1 = new modelUser({ name: "Jo0", id: 1 });
 // const User2 = new modelUser({ name: "Jo00", id: 2 });
